@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Enxame</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="..">Hybroo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../calculator">Calculadora</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="">Enxame<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-md-6" style="margin: 1rem auto 0 auto;">
+            <div class="card">
+                <div class="card-body">
+                    <form method="GET" action="{% url 'submitPart1'%}">
+                        <div class="form-group">
+                            <label for="nvar">Número de variáveis de projeto</label>
+                            <input type="number" class="form-control" id="nvar" name="nvar">
+                            <label for="npop">Número da População</label>
+                            <input type="number" class="form-control" id="npop" name="npop">
+                            <label for="ngen">Número de Gerações</label>
+                            <input type="number" class="form-control" id="ngen" name="ngen">
+                            <label for="nrep">Número de Repetições</label>
+                            <input type="number" class="form-control" id="nrep" name="nrep">
+                        </div>
+                        <div class="form-group">
+                            <label for="tFO">Tipo da Função Objetivo</label>
+                            <select class="form-control" id="tFO" name="tFO">
+                                <option value="sphere">Esfera</option>
+                                <option style="display: none;"></option>
+                            </select>
+                            <label for="tInitPop">Tipo da População Inicial</label>
+                            <select class="form-control" id="tInitPop" name="tInitPop">
+                                <option value="1">Randômica no Intervalo</option>
+                                <option style="display: none;"></option>
+                            </select>
+                            <label for="parada">Parada da execução</label>
+                            <select class="form-control" id="parada" name="parada">
+                                <option value="gerações">Gerações</option>
+                                <option style="display: none;"></option>
+                            </select>
+                        </div>
+                        <div class="row" style="margin: 2em auto 0 auto;">
+                            <div class="col-6">
+                                <input type="submit" class="btn btn-success" style="display:block; margin: 0 auto;">
+                            </div>
+                            <div class="col-6">
+                                <input type="reset" class="btn btn-danger" style="display:block; margin: 0 auto;">
+                            </div>
+                        </div>
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
